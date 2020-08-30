@@ -106,7 +106,7 @@ php -r "unlink('composer-setup.php');"
 ```  
 设置国内镜像  
 ```bash  
-composer config -g repo.packagist composer https://packagist.phpcomposer.com  
+composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/  
 ```  
 使用 composer ；  
 ```bash  
