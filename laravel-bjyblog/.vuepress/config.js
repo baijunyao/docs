@@ -37,7 +37,8 @@ module.exports = {
                         collapsable: false,
                         children: [
                             ['Windows', 'Windows'],
-                            ['Linux', 'Linux']
+                            ['Linux', 'Linux'],
+                            ['DockerCompose', 'Docker Compose']
                         ]
                     },
                     {
@@ -149,6 +150,13 @@ module.exports = {
                     { text: 'Blog', link: 'https://baijunyao.com' },
                 ],
                 sidebar: [
+                    {
+                        title: 'Development Environment',
+                        collapsable: false,
+                        children: [
+                            ['/en/DockerCompose', 'Docker Compose']
+                        ]
+                    },
                     {
                         title: 'Installation',
                         collapsable: false,

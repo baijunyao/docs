@@ -2,20 +2,14 @@ Clone laravel-bjyblog with git:
 ```bash
 git clone https://github.com/baijunyao/laravel-bjyblog.git && cd laravel-bjyblog 
 ```
-Rename the `.env.example` file to `.env` :
+Rename the `.env.docker` file to `.env` :
 ```bash  
-cp .env.example .env  
+cp .env.docker .env  
 ```  
-Change `.env` config  
-For example:
-| config | value | 
-| ------ | ----- |
-| APP_NAME | bjyblog |
-| APP_URL | https://baijunyao.com |
-| DB_DATABASE | laravel_bjyblog |
-| DB_USERNAME | laravel_bjyblog |
-| DB_PASSWORD | \*\*\* |
-
+Into the php container
+```bash
+docker-compose exec php bash
+```
 Composer install: 
 ```bash  
 composer install  
@@ -40,3 +34,8 @@ To create the symbolic link:
 ```bash
 php artisan storage:link
 ```  
+Add `laravel-bjyblog.test` to hosts file
+```bash
+127.0.0.1 laravel-bjyblog.test
+```
+Use a browser to open http://laravel-bjyblog.test
