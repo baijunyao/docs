@@ -40,3 +40,7 @@ To create the symbolic link:
 ```bash
 php artisan storage:link
 ```  
+Create Passport keys  
+```bash
+php artisan passport:keys
+```
