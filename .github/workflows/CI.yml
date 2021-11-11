@@ -27,9 +27,7 @@ jobs:
       - name: Build
         run: |
           yarn docs:build:laravel-bjyblog
-          yarn docs:build:laravel-print
           yarn docs:build:laravel-scout-elasticsearch
-          yarn docs:build:thinkphp-bjyadmin
           yarn docs:build:thinkphp-bjyblog
           tar -zcvf dist.tar.gz dist
       - name: SSH Init

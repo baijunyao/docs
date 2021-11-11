@@ -3,12 +3,8 @@
   "scripts": {
     "docs:dev:laravel-bjyblog": "vuepress dev laravel-bjyblog",
     "docs:build:laravel-bjyblog": "vuepress build laravel-bjyblog",
-    "docs:dev:laravel-print": "vuepress dev laravel-print",
-    "docs:build:laravel-print": "vuepress build laravel-print",
     "docs:dev:laravel-scout-elasticsearch": "vuepress dev laravel-scout-elasticsearch",
     "docs:build:laravel-scout-elasticsearch": "vuepress build laravel-scout-elasticsearch",
-    "docs:dev:thinkphp-bjyadmin": "vuepress dev thinkphp-bjyadmin",
-    "docs:build:thinkphp-bjyadmin": "vuepress build thinkphp-bjyadmin",
     "docs:dev:thinkphp-bjyblog": "vuepress dev thinkphp-bjyblog",
     "docs:build:thinkphp-bjyblog": "vuepress build thinkphp-bjyblog"
   },
