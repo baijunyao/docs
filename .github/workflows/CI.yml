@@ -29,20 +29,6 @@ jobs:
           yarn docs:build:laravel-bjyblog
           yarn docs:build:laravel-scout-elasticsearch
           yarn docs:build:thinkphp-bjyblog
-          tar -zcvf dist.tar.gz dist
-      - name: SSH Init
-        run: |
-          mkdir -p ~/.ssh/
-          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
-          sudo chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-      - name: SCP
-        run: |
-          ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "rm -rf /tmp/docs && mkdir -p /tmp/docs"
-          scp dist.tar.gz ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/tmp/docs/
-      - name: Deploy
-        run: |
-          ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "cd /tmp/docs && tar -zxvf dist.tar.gz && rm -rf /laravel-bjyblog/site/public/docs/ && mv /tmp/docs/dist /laravel-bjyblog/site/public/docs/"
 
   notify:
     name: Slack Notify
