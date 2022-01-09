@@ -29,6 +29,21 @@ jobs:
           yarn docs:build:laravel-bjyblog
           yarn docs:build:laravel-scout-elasticsearch
           yarn docs:build:thinkphp-bjyblog
+      - uses: azure/docker-login@v1
+        with:
+          username: baijunyao
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      - uses: azure/docker-login@v1
+        with:
+          login-server: registry.cn-beijing.aliyuncs.com
+          username: ${{ secrets.ALIYUN_CONTAINER_REGISTRY_USERNAME }}
+          password: ${{ secrets.ALIYUN_CONTAINER_REGISTRY_PASSWORD }}
+      - name: Push Docker Images
+        run: |
+          docker build . -t baijunyao/docs
+          docker tag baijunyao/docs registry.cn-beijing.aliyuncs.com/baijunyao/docs
+          docker push baijunyao/docs
+          docker push registry.cn-beijing.aliyuncs.com/baijunyao/docs
 
   notify:
     name: Slack Notify
